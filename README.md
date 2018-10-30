@@ -10,7 +10,6 @@ A fully featured Factions plugin for PMMP PocketMine-MP
 Easily create, delete, and manage factions
 
 Players in the same faction don't inflict PVP damage on each other
-
 Kick annoying players
 
 Invite anyone you want (they can accept or deny the invite)
