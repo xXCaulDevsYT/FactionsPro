@@ -28,7 +28,7 @@ class FactionListener implements Listener {
 
 		if($this->plugin->motdWaiting($player)) {
 			if(time() - $this->plugin->getMOTDTime($player) > 30) {
-				$PCE->getPlayer()->sendMessage($this->plugin->formatMessage("Timed out. Please use /f desc again."));
+				$PCE->getPlayer()->sendMessage($this->plugin->formatMessage("§l§c»§r§c Timed out. Please use /f desc again."));
 				$this->plugin->db->query("DELETE FROM motdrcv WHERE player='$player';");
 				$PCE->setCancelled(true);
 				return true;
@@ -37,7 +37,7 @@ class FactionListener implements Listener {
 				$faction = $this->plugin->getPlayerFaction($player);
 				$this->plugin->setMOTD($faction, $player, $motd);
 				$PCE->setCancelled(true);
-				$PCE->getPlayer()->sendMessage($this->plugin->formatMessage("Successfully updated the faction description. Type /f info.", true));
+				$PCE->getPlayer()->sendMessage($this->plugin->formatMessage("§l§a»§r§a Successfully updated the faction description. Type /f info.", true));
 			}
 			return true;
 		}
@@ -100,7 +100,7 @@ class FactionListener implements Listener {
 				return;
 			}else{
 				$event->setCancelled(true);
-				$event->getPlayer()->sendMessage($this->plugin->formatMessage("You cannot break blocks here. This is already a property of a faction. Type /f plotinfo for details."));
+				$event->getPlayer()->sendMessage($this->plugin->formatMessage("§l§c»§r§c You cannot break blocks here. This is already a property of a faction. Type /f plotinfo for details."));
 				return;
 			}
 		}
@@ -115,7 +115,7 @@ class FactionListener implements Listener {
 				return;
 			} else {
 				$event->setCancelled(true);
-				$event->getPlayer()->sendMessage($this->plugin->formatMessage("You cannot place blocks here. This is already a property of a faction. Type /f plotinfo for details."));
+				$event->getPlayer()->sendMessage($this->plugin->formatMessage("§l§c»§r§cYou cannot place blocks here. This is already a property of a faction. Type /f plotinfo for details."));
 				return;
 			}
 		}
